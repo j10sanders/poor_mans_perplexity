@@ -12,10 +12,10 @@ export const ResultCard: React.FC<ResultCardProps> = (props) => {
       <Card size="2" style={{ width: 425, height: '100%' }} className="Card">
         <Flex gap="4" align="center">
           <Avatar size="2" radius="full" fallback="..." />
-          <Box>
+          <Box width="300px">
             <Skeleton width="80%" />
             <Skeleton width="90%" />
-            <Skeleton width={300} />
+            <Skeleton width="95%" />
           </Box>
         </Flex>
       </Card>
