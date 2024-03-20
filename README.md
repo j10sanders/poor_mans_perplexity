@@ -1,35 +1,8 @@
-# Welcome to the Dexa coding interview
 
-This is meant to be a collaborative "open book" exercise. Please use any apps, 
-tools, AI, etc that you would normally use while programming.
+https://github.com/j10sanders/poor_mans_perplexity/assets/11084414/9e0aa6b9-cc29-4118-b052-449f68edf97a
+Uploading Screen Recording 2024-03-19 at 8.19.02 PM.mov…
 
-We have also included a few helpful services/tools to save you time. More 
-details below.
-
-## Task
-
-Build a simple clone of [Perplexity](https://www.perplexity.ai/).
-
-When the user submits a new search, they should be presented with the search 
-results from Google, as well as an AI generated response to their query, based 
-on the retrieved Google search results.
-
-## Setup
-
-1. Use npm to install dependencies
-2. Add required environment variables
-3. Run `npm run dev` to start the dev server
-
-## Documentation
-
-- Remix: https://remix.run/docs/en/2.3.1
-- Dexter (for OpenAI): https://github.com/dexaai/dexter/tree/master
-- SerpAPI (for Google search): https://github.com/serpapi/serpapi-javascript
-
-## Services
-
-These are helpful services that we have already configured for you. Find the 
-code in `/app/services/`.
-
-- OpenAI: use GPT 3.5
-- SerpAPI: get Google search results for a query
+Some tradeoffs and decisions I made:
+ - I opted to use radix-ui since I wanted a card component and had just heard about it. I ended up using a few of their UI components.
+ - I only used the `organic_results` from serpapi. Since the assignment was meant to take an hour or two, this was one way to keep scope low. Would certainly make use of knowledge graph, images, and inline videos if I decided to spend more time.
+ - This is the first Remix project I've used so hopefully I didn't butcher the loader and fetcher.
