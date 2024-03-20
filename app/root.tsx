@@ -9,6 +9,8 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import cssReset from '~/styles/reset.css';
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: cssReset },
@@ -25,10 +27,12 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
+        <Theme appearance="dark">
+          <Outlet />
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
+        </Theme>
       </body>
     </html>
   );

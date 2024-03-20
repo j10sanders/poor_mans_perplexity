@@ -6,11 +6,43 @@ import { EnvVars } from './env-vars';
  * Docs: https://github.com/serpapi/serpapi-javascript
  */
 
-// @TODO: Add a type for the search result.
-export type SearchResult = unknown;
+export interface SearchResult {
+  displayed_link: string;
+  favicon: string;
+  link: string;
+  position: number;
+  redirect_link: string;
+  snippet: string;
+  snippet_highlighted_words: string[];
+  source: string;
+  title: string;
+}
+
+export interface GoogleInlineImage {
+  source: string;
+  thumbnail: string;
+  original: string;
+  title: string;
+  source_name: string;
+}
+
+export interface FullResult {
+  organic_results: SearchResult[];
+  knowledge_graph?: {
+    title: string;
+    type: string;
+    description: string;
+  };
+  // Lots of other types here can be added to make this comprehensive
+}
 
 /** Search Google for the given query using the SerpApi service. */
-export async function searchGoogle(query: string): Promise<SearchResult[]> {
-  // @TODO: Use the SerpApi SDK to perform a Google search.
-  return [];
-}
+export const searchGoogle = async (query: string): Promise<SearchResult[]> => {
+  const response = (await getJson({
+    engine: 'google',
+    api_key: EnvVars.serpapi(),
+    q: query,
+  })) as FullResult;
+
+  return response.organic_results;
+};

@@ -149,6 +149,82 @@ textarea {
   margin: 0; /* 2 */
 }
 
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  width: 100%; /* Full width */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.Summary {
+  max-width: 600px;
+  padding-top: 20px;
+}
+
+.ResultsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Create two columns of equal width */
+  gap: 20px; /* Space between cards */
+  max-width: 900px; /* Adjust based on your preference */
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px; /* Add some padding on the sides */
+}
+
+.ResultsContainer > a {
+  display: block; /* Make the <a> tag behave like a block element */
+  transition: box-shadow 200ms ease, transform 200ms ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 8px;
+}
+
+.ResultsContainer > a:hover {
+  transform: translate(2px, -2px); /* Move up and to the right on hover */
+  box-shadow: -4px 4px 0 rgba(255, 255, 255, 0.664); /* Specific shadow effect */
+}
+
+/* Basic responsive form styling */
+.FormRoot {
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.FormField {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure full width within the form */
+}
+
+.Input,
+.Button {
+  width: 100%; /* Ensure inputs and buttons stretch to full width of the form */
+  padding: 10px;
+  margin-top: 5px; /* Add a little top margin for spacing */
+}
+
+.Button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Button:hover {
+  background-color: #0056b3;
+}
+
 /**
 Remove the inheritance of text transform in Edge and Firefox.
 */
