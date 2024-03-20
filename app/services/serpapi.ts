@@ -18,14 +18,6 @@ export interface SearchResult {
   title: string;
 }
 
-export interface GoogleInlineImage {
-  source: string;
-  thumbnail: string;
-  original: string;
-  title: string;
-  source_name: string;
-}
-
 export interface FullResult {
   organic_results: SearchResult[];
   knowledge_graph?: {
@@ -33,7 +25,7 @@ export interface FullResult {
     type: string;
     description: string;
   };
-  // Lots of other types here can be added to make this comprehensive
+  // Lots of other types here can be added to make this comprehensive. Included knowledge_graph since it would the next thing to add imo.
 }
 
 /** Search Google for the given query using the SerpApi service. */
